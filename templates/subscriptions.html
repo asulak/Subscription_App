@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Subscriptions</title>
+</head>
+<body>
+    <h1>Available Subscription Plans</h1>
+    <ul>
+        {% for plan in plans %}
+            <li>
+                <h2>{{ plan.name }}</h2>
+                <p>{{ plan.description }}</p>
+                <p>Price: ${{ plan.price }}</p>
+                <p>Duration: {{ plan.duration_days }} days</p>
+                <a href="{{ url_for('subscribe', plan_id=plan.id) }}">Subscribe</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

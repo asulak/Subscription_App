@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Subscription</title>
+</head>
+<body>
+    <h1>My Active Subscription</h1>
+    {% if subscription %}
+        <h2>{{ subscription.plan.name }}</h2>
+        <p>{{ subscription.plan.description }}</p>
+        <p>Start Date: {{ subscription.start_date.strftime('%Y-%m-%d') }}</p>
+        <p>End Date: {{ subscription.end_date.strftime('%Y-%m-%d') }}</p>
+    {% else %}
+        <p>You don't have an active subscription.</p>
+    {% endif %}
+</body>
+</html>
